@@ -1,0 +1,143 @@
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$lightGrey: hsl(217, 12%, 63%);
+$mediumGrey: hsl(216, 12%, 54%);
+$darkBlue: hsl(213, 19%, 18%);
+$veryDarkBlue: hsl(216, 12%, 8%);
+
+@font-face {
+    font-family: "Overpass";
+    src: url("../assets/Overpass-VariableFont_wght.ttf") format("ttf");
+
+}
+
+* {
+    font-family: "Overpass", sans-serif;
+    color: white;
+    font-weight: 400;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: $veryDarkBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .square {
+        display: flex;
+        flex-direction: column;
+        background-color: $darkBlue;
+        padding: 30px;
+        max-width: 350px;
+        border-radius: 20px;
+        .top {
+            display: initial;
+            padding: 0 0 10px 5px;
+            img {
+                border-radius: 47%;
+                background-color: lighten($darkBlue, 5%);
+                padding: 15px;
+            }
+        }
+        .top2 {
+            margin-bottom: 30px;
+            display: none;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+        }
+        .text {
+            display: initial;
+            padding: 10px 0 10px 0;
+            .qst {
+                color: $white;
+                font-size: 30px;
+                word-spacing: 2px;
+                letter-spacing: 1px;
+            }
+            p {
+                line-height: 25px;
+                color: $lightGrey;
+            }
+        }
+        .results {
+            display: none;
+            color: darken($orange, 10%);
+            align-self: center;
+            background-color: lighten($darkBlue, 5%);
+            padding: 6px 15px 2px 15px;
+            border-radius: 20px;
+            .rate {
+                color: darken($orange, 10%);
+            }
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            height: 55px;
+            .button {
+                font-size: 18px;
+                padding-top: 18px;
+                width: 55px;
+                border-radius: 50%;
+                color: $mediumGrey;
+                background-color: lighten($darkBlue, 5%);
+                cursor: pointer;
+                transition: ease-in-out;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $orange;
+                    color: $white;
+                }
+            }
+            .active {
+                background-color: $lightGrey;
+                color: $white;
+            }
+        }
+        .text2 {
+            display: none;
+            padding-top: 30px;
+            .ty {
+                text-align: center;
+                font-size: 30px;
+                color: $white;
+            }
+            p {
+                text-align: center;
+                line-height: 25px;
+                color: $lightGrey;
+            }
+        }
+        .send {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: $orange;
+            cursor: pointer;
+            transition: ease-in-out;
+            transition-duration: 0.3s;
+            &:hover {
+                background-color: $white;
+                .sub {
+                    color: $orange;
+                }
+            }
+            .sub {
+                padding-top: 4px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: $white;
+            }
+        }
+    }
+}
